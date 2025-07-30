@@ -3,9 +3,24 @@
 
 @use '@angular/material' as mat;
 
+
+/* ------------------------------ Import Fonts ------------------------------ */
+@font-face {
+  font-family: MyriadPro;
+  src: url("assets/css/fonts/MyriadFont/MyriadPro-Regular.otf");
+  src: url("assets/css/fonts/MyriadFont/MyriadProRegular.eot") format("embedded-opentype"), url(assets/css/fonts/MyriadFont/MyriadProRegular.woff2) format("woff2"), url(assets/css/fonts/MyriadFont/MyriadProRegular.woff) format("woff"), url(assets/css/fonts/MyriadFont/MyriadProRegular.ttf) format("truetype"), url(assets/css/fonts/MyriadFont/MyriadProRegular.svg#MyriadProRegular) format("svg");
+  font-weight: 500; // ✅ This is the key fix
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ---------------------------- Import Fonts end ---------------------------- */
+
+
 $my-theme: mat.define-theme($config: (
-    typography: (plain-family: '"MyriadPro", sans-serif',
-      brand-family: '"MyriadPro", sans-serif',
+    typography: (plain-family: 'MyriadPro, sans-serif',
+      brand-family: 'MyriadPro, sans-serif',
     ),
   ),
 );
@@ -15,19 +30,6 @@ $my-theme: mat.define-theme($config: (
   @include mat.all-component-typographies($my-theme);
 }
 
-
-/* ------------------------------ Import Fonts ------------------------------ */
-// @font-face {
-//   font-family: MyriadPro;
-//   src: url("assets/css/fonts/MyriadFont/MyriadPro-Regular.otf");
-//   src: url("assets/css/fonts/MyriadFont/MyriadProRegular.eot") format("embedded-opentype"), url(assets/css/fonts/MyriadFont/MyriadProRegular.woff2) format("woff2"), url(assets/css/fonts/MyriadFont/MyriadProRegular.woff) format("woff"), url(assets/css/fonts/MyriadFont/MyriadProRegular.ttf) format("truetype"), url(assets/css/fonts/MyriadFont/MyriadProRegular.svg#MyriadProRegular) format("svg");
-//   font-weight: 500; // ✅ This is the key fix
-//   font-style: normal;
-//   font-display: swap;
-// }
-
-
-/* ---------------------------- Import Fonts end ---------------------------- */
 
 body {
   height: 100%;
